@@ -4,9 +4,19 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Demo"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+    <StackPanel>
+        <syncfusion:UpDown Value="{Binding Value0}" NumberDecimalDigits="2"/>
+        <syncfusion:UpDown Value="{Binding Value1}" NumberDecimalDigits="2"/>
+        <UniformGrid Rows="1" >
+            <Button Content="Add Operation" Command="{Binding SystemCommand}" CommandParameter="Add"/>
+            <Button Content="Subtract Operation" Command="{Binding SystemCommand}" CommandParameter="Subtract"/>
+            <Button Content="Multiply Operation" Command="{Binding SystemCommand}" CommandParameter="Multiply"/>
+            <Button Content="Divide Operation" Command="{Binding SystemCommand}" CommandParameter="Divide"/>
+        </UniformGrid>
+        <syncfusion:UpDown Value="{Binding Result}" NumberDecimalDigits="2"/>
+        <ToggleButton Content="Generate Random" IsChecked="{Binding Random}"/>
+    </StackPanel>
 </Window>
